@@ -10,6 +10,10 @@ app.use(cors({
 }))
 
 app.use(express.json());
+app.get("/", async(req, res) => {
+   const html = "<p>Api is running...</p>"
+   res.send(html)
+})
 app.use("/api/v1", todoRoute)
 app.use("/api/v1", userRoute)
 
